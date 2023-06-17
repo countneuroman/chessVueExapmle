@@ -1,12 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import { Chessground } from 'chessground/chessground';
-//TODO: не работает нифига с этими стилями.
-import '@/assets/chessground.base.css';
-import '@/assets/chessground.brown.css';
-import '@/assets/chessground.cburnett.css';
-//С этим работает, но кривовато.
-// import '@/assets/board.css';
+import '@/assets/board.css';
 const boardDiv = ref<HTMLElement | null>(null);
 
 onMounted(() => {
@@ -18,15 +13,15 @@ onMounted(() => {
 </script>
 
 <template>
-  <div ref="boardDiv"></div>
+  <div class="main-wrap">
+    <div class="main-board">
+      <div ref="boardDiv"></div>
+    </div>
+  </div>
 </template>
 
 <style>
 body {
   background-color: #222;
 }
-#boardDiv {
-  width: 500px;
-  height: 500px;
-  }
 </style>
